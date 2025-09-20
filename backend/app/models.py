@@ -1,33 +1,40 @@
-from sqlalchemy import Column, Integer, String, Text, Boolean, TIMESTAMP, ForeignKey
-from sqlalchemy.orm import relationship
-from app.db.database import Base
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import String, Integer, Text, Boolean, ForeignKey, TIMESTAMP
+from .database import Base
 
-class User(Base):
+
+class Users(Base):
     __tablename__ = "users"
-    user_id = Column(Integer, primary_key=True, index=True)
-    username = Column(String(15), unique=True, nullable=False)
-    users_email = Column(String(250), unique=True)
-    users_password = Column(Text, nullable=False)
 
-    smacks = relationship("Smack", back_populates="user")
+    user_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    username: Mapped[str] = mapped_column(String(15), unique=True, nullable=False)
+    users_email: Mapped[str] = mapped_column(String, unique=True) 
+    users_password: Mapped[str] = mapped_column(Text, nullable=False)
 
-class Feeling(Base):
+    smacks: Mapped[list["Smack"]] = relationship(back_populates="user")
+
+
+class Feelings(Base):
     __tablename__ = "feelings"
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(20), unique=True, nullable=False)
 
-    smacks = relationship("Smack", back_populates="feeling_obj")
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String(20), unique=True, nullable=False)
 
-class Smack(Base):
+    smacks: Mapped[list["Smack"]] = relationship(back_populates="feeling_rel")
+
+
+class Smacks(Base):
     __tablename__ = "smacks"
-    id = Column(Integer, primary_key=True, index=True)
-    smack_username = Column(String(15), ForeignKey("users.username"))
-    feeling_id = Column(Integer, ForeignKey("feelings.id"))
-    blurb = Column(String(250))
-    posted_at = Column(TIMESTAMP)
-    likes = Column(Integer, default=0)
-    edited_at = Column(TIMESTAMP)
-    is_deleted = Column(Boolean, default=False)
 
-    user = relationship("User", back_populates="smacks")
-    feeling_obj = relationship("Feeling", back_populates="smacks")
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    smack_username: Mapped[str] = mapped_column(String(15), ForeignKey("users.username"))
+    feeling_id: Mapped[int] = mapped_column(Integer, ForeignKey("feelings.id"))
+    feeling: Mapped[str] = mapped_column(String(20), ForeignKey("feelings.name"))
+    blurb: Mapped[str] = mapped_column(String(250))
+    posted_at: Mapped[str] = mapped_column(TIMESTAMP)
+    likes: Mapped[int] = mapped_column(Integer, default=0)
+    edited_at: Mapped[str] = mapped_column(TIMESTAMP)
+    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False)
+
+    user: Mapped["User"] = relationship(back_populates="smacks")
+    feeling_rel: Mapped["Feeling"] = relationship(back_populates="smacks")
