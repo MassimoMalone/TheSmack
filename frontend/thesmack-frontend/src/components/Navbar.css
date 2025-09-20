@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Bank Gothic";
+  src: url("../assets/bank gothic medium bt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: orange;
+  padding: 10px 20px;
+  font-family: "Bank Gothic", Arial, sans-serif;
+  border-radius: 10px;
+
+  position: fixed;
+  top: 5%;
+  left: 10%;
+  width: 70%;
+  height: 5%;
+  z-index: 1000;
+  font-size: clamp(16px, 2vw, 24px);
+}
+
+.navbar-logo img {
+  height: 80px;
+  width: 90px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+.navbar-links :hover {
+  background-color: black;
+  color: white;
+  border-color: gray;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 5px 10px; /* space between text and border */
+  border: 2px solid darkorange; /* border around the link */
+  transition: 0.3s;
+}
+
+.navbar-search input {
+  background-color: white; /* makes the input background white */
+  border-radius: 20px; /* keeps it soft and rounded */
+  padding: 5px 10px; /* adds some space inside */
+  border: 1px solid #ccc; /* optional: subtle border */
+  outline: none; /* removes default focus outline */
+}
+.navbar-search button {
+  background-color: white; /* makes the button background white too */
+  border-radius: 20px; /* match the input */
+  border: 1px solid #ccc; /* optional */
+  padding: 5px 10px;
+  cursor: pointer;
+}
