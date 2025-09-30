@@ -4,7 +4,7 @@
 CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(15) UNIQUE NOT NULL,
-    users_email UNIQUE,
+    users_email VARCHAR(255) UNIQUE NOT NULL,
     users_password TEXT NOT NULL
 );
 

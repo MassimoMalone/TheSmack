@@ -1,6 +1,9 @@
+from dotenv import load_dotenv
+load_dotenv() 
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import hello
+from app.routers import smacks
 
 app = FastAPI()
 
@@ -18,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(hello.router, prefix="/api")
+app.include_router(smacks.router, prefix="/api")
 
 @app.get("/")
 def root():
