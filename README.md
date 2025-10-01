@@ -5,7 +5,7 @@ Users can create posts, like, comment, follow others, and interact in real time.
 
 ## 🚀 Tech Stack
 - **Frontend:** React, TailwindCSS
-- **Backend:** FastAPI (Python), SQLAlchemy
+- **Backend:** FastAPI (Python), psycopg2
 - **Database:** PostgreSQL
 - **Hosting:** Vercel (frontend), Render/Heroku (backend)
 - **Other:** JWT Auth, Cloudinary/S3 for image uploads
