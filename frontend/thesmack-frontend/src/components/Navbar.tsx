@@ -1,5 +1,7 @@
 import "./Navbar.css";
 import logo from "/src/assets/logo.png";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -9,13 +11,19 @@ function Navbar() {
       </div>
       <ul className="navbar-links">
         <li>
-          <a href="#">Home</a>
+          <Link to="/" className="nav-link-item">
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#">Profiles</a>
+          <Link to="/profile" className="nav-link-item">
+            profile
+          </Link>
         </li>
         <li>
-          <a href="#">Search</a>
+          <Link to="/login" className="nav-link-item">
+            login
+          </Link>
         </li>
       </ul>
       <div className="navbar-search">

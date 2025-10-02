@@ -1,17 +1,46 @@
+/* ---------------------------------------------------- */
+/* GLOBAL STYLES (Vite Default Base) */
+/* ---------------------------------------------------- */
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Force light color scheme for the bright retro look */
+  color-scheme: light;
+  color: #242424; /* Dark text color for the light background */
+
+  /* --- RETRO BLUE BACKGROUND COLOR SET ON ROOT --- */
+  background-color: #122436;
+  /* --------------------------------------------- */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ---------------------------------------------------- */
+/* BODY STYLES - Remove Centering and Add Texture */
+/* ---------------------------------------------------- */
+
+body {
+  margin: 0;
+
+  /* REMOVED: display: flex; and place-items: center; 
+     This allows the content to flow naturally and fill the viewport. */
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  /* --- RETRO TEXTURE EFFECT --- */
+  /* This creates the subtle, non-uniform cloud/texture effect using gradients */
+}
+
+/* ---------------------------------------------------- */
+/* STANDARD HTML ELEMENT STYLES */
+/* ---------------------------------------------------- */
 
 a {
   font-weight: 500;
@@ -20,14 +49,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -57,7 +78,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #a0c4ff; /* Keep the blue background */
   }
   a:hover {
     color: #747bff;

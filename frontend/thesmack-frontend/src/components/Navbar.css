@@ -5,61 +5,127 @@
   font-style: normal;
 }
 
+/* ---------------------------------------------------- */
+/* 1. NAVBAR CONTAINER - The White/Light Gray Pill Shape */
+/* ---------------------------------------------------- */
+
+/* ---------------------------------------------------- */
+/* 1. NAVBAR CONTAINER - The Orange Pill Shape */
+/* ---------------------------------------------------- */
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: orange;
-  padding: 10px 20px;
-  font-family: "Bank Gothic", Arial, sans-serif;
-  border-radius: 10px;
 
+  /* RETRO BACKGROUND AND BORDER (Back to Orange Gradient) */
+  background: linear-gradient(
+    to top,
+    #ff9900 0%,
+    #ffc640 100%
+  ); /* Orange gradient */
+  border: 4px solid #cc6600; /* Darker orange border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+
+  padding: 10px 20px;
+  border-radius: 40px; /* High border radius for the pill shape */
+
+  font-family: "Bank Gothic", Arial, sans-serif;
+  font-size: clamp(14px, 1.8vw, 20px);
+
+  /* POSITIONING */
   position: fixed;
   top: 5%;
   left: 10%;
-  width: 70%;
+  width: 75%;
   height: 5%;
   z-index: 1000;
-  font-size: clamp(16px, 2vw, 24px);
 }
+
+/* ---------------------------------------------------- */
+/* 2. LOGO */
+/* ---------------------------------------------------- */
 
 .navbar-logo img {
   height: 80px;
   width: 90px;
 }
 
+/* ---------------------------------------------------- */
+/* 3. NAVIGATION LINKS LIST */
+/* ---------------------------------------------------- */
+
 .navbar-links {
   display: flex;
   list-style: none;
-  gap: 50px;
+  gap: 30px;
+  /* Push search bar away to the right */
+  margin-right: auto;
+  margin-left: 20px;
 }
 
-.navbar-links :hover {
-  background-color: black;
-  color: white;
-  border-color: gray;
-}
+/* ---------------------------------------------------- */
+/* 4. LINK STYLING - Simple, capitalized text links (Targeting .nav-link-item) */
+/* ---------------------------------------------------- */
 
-.navbar-links a {
+.navbar-links .nav-link-item {
   text-decoration: none;
   color: black;
-  font-weight: bold;
-  padding: 5px 10px; /* space between text and border */
-  border: 2px solid darkorange; /* border around the link */
-  transition: 0.3s;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 5px 0px;
+
+  /* Remove button look */
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+/* ---------------------------------------------------- */
+/* 5. HOVER STYLING - Simple hover underline/color change */
+/* ---------------------------------------------------- */
+
+.navbar-links li:hover .nav-link-item {
+  color: #007bff; /* Bright blue hover text */
+  border-bottom: 2px solid #007bff; /* Simple underline effect */
+}
+
+/* ---------------------------------------------------- */
+/* 6. SEARCH BAR (Styling to match the retro aesthetic) */
+/* ---------------------------------------------------- */
+
+.navbar-search {
+  display: flex;
+  align-items: center;
 }
 
 .navbar-search input {
-  background-color: white; /* makes the input background white */
-  border-radius: 20px; /* keeps it soft and rounded */
-  padding: 5px 10px; /* adds some space inside */
-  border: 1px solid #ccc; /* optional: subtle border */
-  outline: none; /* removes default focus outline */
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  width: 150px;
+  /* Styling to make the input connect to the button */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
 }
+
 .navbar-search button {
-  background-color: white; /* makes the button background white too */
-  border-radius: 20px; /* match the input */
-  border: 1px solid #ccc; /* optional */
+  /* Use the bright orange color from the logo */
+  background-color: #ff9900;
+  color: black;
+  font-weight: 900;
+  border: 1px solid #ccc;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 10px;
+  /* Styling to make the button connect to the input */
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

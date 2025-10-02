@@ -1,0 +1,83 @@
+/* ---------------------------------------------------- */
+/* NEW COMPONENT: THE RIGHT NOW (Retro Box Style) */
+/* ---------------------------------------------------- */
+
+.right-now-container {
+  /* POSITIONING - We will move this to HomePage.tsx later */
+  position: absolute;
+  top: 200px; /* Below Navbar */
+  left: 10%;
+  width: 20%; /* Sizing to match the reference image's proportion */
+
+  /* RETRO BOX STYLING */
+  background-color: white;
+  border: 3px solid #666; /* Gray border */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Contains the border-radius */
+}
+
+.right-now-header {
+  background-color: #333; /* Dark header background */
+  color: #ffc640; /* Yellow text color */
+  font-family: "Bank Gothic", Arial, sans-serif;
+  font-size: 1.2em;
+  font-weight: 900;
+  padding: 8px 15px;
+  border-bottom: 3px solid #666;
+  text-align: center;
+}
+
+.right-now-content {
+  padding: 15px;
+  color: #333;
+  font-family: Arial, sans-serif; /* Use a standard font for body text */
+}
+
+.date-time {
+  color: #999;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border: 2px solid #999;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.author-name {
+  font-weight: bold;
+  color: #007bff; /* Blue link-like text */
+  margin-right: 5px;
+}
+
+.smack-mood {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.mood-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.mood-icon {
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+.mood-text {
+  color: red;
+  font-weight: bold;
+}
