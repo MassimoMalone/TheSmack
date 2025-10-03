@@ -4,7 +4,7 @@ A full-stack social networking platform inspired by *Victorious*.
 Users can create posts, like, comment, follow others, and interact in real time.
 
 ## 🚀 Tech Stack
-- **Frontend:** React, TailwindCSS
+- **Frontend:** React, Typescript
 - **Backend:** FastAPI (Python), psycopg2
 - **Database:** PostgreSQL
 - **Hosting:** Vercel (frontend), Render/Heroku (backend)
