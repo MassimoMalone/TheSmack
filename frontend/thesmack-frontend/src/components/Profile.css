@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "Bank Gothic";
+  src: url("../assets/bank gothic medium bt.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.profile-info-group {
+  /* 1. CRITICAL: Make the parent fixed */
+  position: fixed;
+  top: 5%;
+  right: 5%; /* Adjust this to move the entire group */
+
+  /* 2. CRITICAL: Use Flexbox to put children side-by-side */
+  display: flex;
+
+  /* 3. Vertically align items in the center of the group */
+  align-items: center;
+
+  gap: 15px;
+}
+
+.page_name {
+  font-family: "Bank Gothic";
+  width: auto;
+  font-size: 48px;
+  color: yellow;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+
+  /* Remove ALL positioning: */
+  /* position: fixed; right: 18%; top: 20%; */
+}
+
+/* ======================================================= */
+/* 2. .profile_pic (The Image Frame)                       */
+/* ======================================================= */
+.profile_pic {
+  width: 120px;
+  height: 250px;
+  /* ... (rest of your visual styles) ... */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  /* Remove ALL positioning: */
+  /* position: fixed; top: 20%; right: 68%; */
+}
+
+/* 3. .profile-img (The Image) - Keep this as is for fitting */
+.profile-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+/* ======================================================= */
+/* 0. NEW PARENT CONTAINER FOR FIXED HEADER GROUP          */
+/* ======================================================= */
+.profile-info-group {
+  position: fixed;
+  top: 20%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 10; /* Keep it above other content */
+}
+
+/* ... (Your existing .page_name, .profile_pic, .profile-img styles) ... */
+
+/* ======================================================= */
+/* 3. NEW STYLES FOR THE SMACK FORM AREA                   */
+/* ======================================================= */
+.smack-area-wrapper {
+  /* Use margin: auto to center the content horizontally on the page */
+  margin: 280px auto 40px auto; /* Push it down below the fixed header (280px is an estimate) */
+  max-width: 600px; /* Give the form a readable width */
+  width: 90%; /* Use 90% of the space up to 600px */
+}
+
+/* ======================================================= */
+/* 4. NEW STYLES FOR THE CREATE SMACK FORM (Basic)         */
+/* ======================================================= */
+.create-smack-form {
+  background-color: #2c3a47; /* Dark background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.smack-textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.smack-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.smack-button {
+  padding: 8px 15px;
+  background-color: yellow;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="min-h-screen bg-gray-900 pt-32 mx-auto max-w-7xl">
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />

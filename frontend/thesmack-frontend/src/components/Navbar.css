@@ -21,14 +21,16 @@
   /* RETRO BACKGROUND AND BORDER (Back to Orange Gradient) */
   background: linear-gradient(
     to top,
-    #ff9900 0%,
-    #ffc640 100%
+    #965a00 0%,
+    #ff9900 10%,
+    #ff9900 90%,
+    #ffdf94 95%
   ); /* Orange gradient */
-  border: 4px solid #cc6600; /* Darker orange border */
+  border: 0px solid #cc6600; /* Darker orange border */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 
   padding: 10px 20px;
-  border-radius: 40px; /* High border radius for the pill shape */
+  border-radius: 16px; /* High border radius for the pill shape */
 
   font-family: "Bank Gothic", Arial, sans-serif;
   font-size: clamp(14px, 1.8vw, 20px);
@@ -47,8 +49,8 @@
 /* ---------------------------------------------------- */
 
 .navbar-logo img {
-  height: 80px;
-  width: 90px;
+  height: 60px;
+  width: 80px;
 }
 
 /* ---------------------------------------------------- */

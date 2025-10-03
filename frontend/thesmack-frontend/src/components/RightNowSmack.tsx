@@ -1,5 +1,3 @@
-// src/components/RightNowSmack.tsx
-
 import React from "react";
 import "./RightNowSmack.css";
 
